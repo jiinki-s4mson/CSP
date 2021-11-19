@@ -2,5 +2,5 @@
 
 [goto online webapp](https://jinki-csp.herokuapp.com)
 
-how to clone woth git-cli:
+how to clone with git-cli:
 git clone https://github.com/jinki-samson/CSP

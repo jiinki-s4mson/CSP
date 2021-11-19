@@ -1,0 +1,26 @@
+{% extends 'qna/base.html' %}
+
+{% block title %}Subjects{% endblock %}
+
+{% block subject %} - Subjects{% endblock %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+
+        <h1 align="center">Subjects</h1>
+
+        {% if subject_list %}
+            <ol>
+            {% for subject in subject_list %}
+                <li><a href="/questions/{{ subject.topic.id }}">{{ subject.topic.subject_text }}</a>{% if subject.quiz %} --- {{ subject.quiz.score }}/{{ subject.quiz.items }} --- {{ subject.percent }}{% endif %}</li>
+            {% endfor %}
+            </ol>
+        {% else %}
+            <center><p>No subjects are available.</p></center>
+        {% endif %}
+
+    {% endif %}
+
+{% endblock %}
+
